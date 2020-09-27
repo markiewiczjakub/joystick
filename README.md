@@ -24,7 +24,21 @@ const options = {
 **scale** - Joystick is scalable, by default width and height are 100px,  
 **color** - main color of joystick,  
 **strokeColor** - stroke color of inner joystick element.  
-  
+
+### Methods
+```javascript
+joy.directionAngleRads();
+```
+Returns joystick's direction angle in radians.  
+```javascript
+joy.directionAngleDegs();
+```
+Same in degrees.
+```javascript
+joy.direction();
+```
+Returns string containing cardinal direction based on an angle from an array ```["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]```.
+### Events
 Joystick contains three events to work on.  
 **Change** - event dispatched when Joystick element is in move.
 ```javascript
