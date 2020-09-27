@@ -72,4 +72,8 @@ export default class Joystick extends Dispatcher {
         } else
             return false;
     }
+
+    displacementValue(): number {
+        return this.dirVector.length();
+    }
 }

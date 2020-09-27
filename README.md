@@ -27,6 +27,17 @@ const options = {
 
 ### Methods
 ```javascript
+joy.directionVector();
+```
+Returns joystick's displacement vector object with x and y properties ```{x: ..., y: ...}```. Values range from 0 to 1.
+```javascript
+joy.displacementValue();
+```
+Returns value from 0 to 1 based on how joystick's position is far from it's center.
+```javascript
+joy.directionAngleRads();
+```
+```javascript
 joy.directionAngleRads();
 ```
 Returns joystick's direction angle in radians.  
