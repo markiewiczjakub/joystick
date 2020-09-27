@@ -37,9 +37,6 @@ Returns value from 0 to 1 based on how joystick's position is far from it's cent
 ```javascript
 joy.directionAngleRads();
 ```
-```javascript
-joy.directionAngleRads();
-```
 Returns joystick's direction angle in radians.  
 ```javascript
 joy.directionAngleDegs();
