@@ -1,0 +1,32 @@
+{
+  "name": "joystick",
+  "version": "1.0.0",
+  "description": "A simple joystick component for webapp using pure JavaScript. It can be used as control element.",
+  "main": "index.js",
+  "dependencies": {
+    "ts-loader": "^8.0.4",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markiewiczjakub/joystick.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markiewiczjakub/joystick/issues"
+  },
+  "homepage": "https://github.com/markiewiczjakub/joystick#readme"
+}
