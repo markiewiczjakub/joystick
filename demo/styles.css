@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #72788D;
+    color: #000000;
+    font-family: sans-serif;
+}
+
+#joystick {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.demo {
+    display: flex;
+    flex-direction: column;
+}
+
+.demo .demo-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.demo .demo-row .demo-row__column {
+    background: #494368;
+    color: #ffffff;
+    margin-left: 10px;
+    padding: 5px;
+}

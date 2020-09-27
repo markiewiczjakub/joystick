@@ -3,20 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joystick Demo</title>
     <script src="../dist/joystick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div id="joystick"></div>
+    <div class="demo">
+        <div class="demo-row">
+            <div class="demo-row__title">State</div>
+            <div class="demo-row__column" id="state">standing still</div>
+        </div>
+        <div class="demo-row">
+            <div class="demo-row__title">Angle (degrees)</div>
+            <div class="demo-row__column" id="degrees">-</div>
+        </div>
+        <div class="demo-row">
+            <div class="demo-row__title">Angle (radians)</div>
+            <div class="demo-row__column" id="radians">-</div>
+        </div>
+        <div class="demo-row">
+            <div class="demo-row__title">Direction</div>
+            <div class="demo-row__column" id="direction">-</div>
+        </div>
+    </div>
     <script>
-        let t = new Joystick(
+        const t = new Joystick(
             document.querySelector("#joystick"),
             {
                 scale: 2,
-                color: "rgb(0, 255, 0)",
-                strokeColor: "rgb(0, 0, 0)"
+                color: "#7A28CB",
+                strokeColor: "#494368"
             }
         );
+
+        t.on("start", () => {
+            document.querySelector("#state").innerHTML = "moving!";
+        });
+
+        t.on("end", () => {
+            document.querySelector("#state").innerHTML = "standing still";
+        });
+
+        t.on("change", () => {
+            document.querySelector("#radians").innerHTML = t.directionAngleRads() || '-';
+            document.querySelector("#degrees").innerHTML = t.directionAngleDegs() || '-';
+            document.querySelector("#direction").innerHTML = t.direction() || '-';
+        });
     </script>
 </body>
 </html>

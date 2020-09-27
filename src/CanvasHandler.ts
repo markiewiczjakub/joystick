@@ -54,8 +54,9 @@ export class CanvasHandler {
 
     bindEvents(): void {
         const handleClickEvent = (event: any, state: boolean): void => {
-            if(state === false && this.joystick.draw === true){
+            if(state === false && this.joystick.draw === true)
                 this.joystick.dispatch("end", this.joystick);
+            if(state === false){
                 this.joystickPoistion.x = this.canvas.width/2;
                 this.joystickPoistion.y = this.canvas.height/2;
                 this.joystick.update(0, 0);

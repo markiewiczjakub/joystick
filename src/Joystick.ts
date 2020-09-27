@@ -49,18 +49,27 @@ export default class Joystick extends Dispatcher {
         }
     }
 
-    directionAngleRads(): number {
-        return this.dirVector.toAngles();
+    directionAngleRads(): any {
+        if(this.dirVector.length() === 0)
+            return false;
+        else
+            return this.dirVector.toAngles();
     }
 
-    directionAngleDegs(): number {
-        return this.directionAngleRads() * 180 / Math.PI;
+    directionAngleDegs(): any {
+        if(this.directionAngleRads())
+            return this.directionAngleRads() * 180 / Math.PI;
+        else
+            return false;
     }
 
-    direction(): string {
-        const angle: number = Math.round(this.directionAngleDegs()) + 450;
-        var val: number = Math.floor((angle / 22.5) + 0.5);
-        var arr: Array<string> = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-        return arr[(val % 16)];
+    direction(): any {
+        if(this.directionAngleRads()){
+            const angle: number = Math.round(this.directionAngleDegs()) + 450;
+            var val: number = Math.floor((angle / 22.5) + 0.5);
+            var arr: Array<string> = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+            return arr[(val % 16)];
+        } else
+            return false;
     }
 }
