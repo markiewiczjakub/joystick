@@ -38,7 +38,7 @@ export default class Joystick extends Dispatcher {
     public update(x: number, y: number){
         this.dirVector = new Vector(x, y);
         
-        this.dispatch("change", { x: this.dirVector.x, y: this.dirVector.y});
+        this.dispatch("change", this);
     }
 
     // public functions for users

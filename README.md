@@ -6,7 +6,7 @@ You can create Joystick simply by implementing **joystick.min.js** file and run 
 ```javascript
 new Joystick();
 ```
-However, to run it without any arguments you have to create HTML element with 'joystick' id before.
+However, to run it without any arguments you have to create HTML element with 'joystick' id before.  
 Joystick class normally gets two arguments
 ```javascript
 new Joystick([HTMLElement], [options]);
@@ -21,10 +21,26 @@ const options = {
     strokeColor: "#ffffff"
 };
 ```
-**scale** - Joystick is scalable, by default width and height are 100px,
-**color** - main color of joystick,
-**strokeColor** - stroke color of inner joystick element.
-
+**scale** - Joystick is scalable, by default width and height are 100px,  
+**color** - main color of joystick,  
+**strokeColor** - stroke color of inner joystick element.  
+  
+Joystick contains three events to work on.
+**Change** - event dispatched when Joystick element is in move.
+```javascript
+const joy = new Joystick();
+joy.on("change", (joystickObject) => { /* code here */ });
+```
+**Start** - event dispatched when Joystick starts moving.
+```javascript
+const joy = new Joystick();
+joy.on("start", (joystickObject) => { /* code here */ });
+```
+**End** - event dispatched when Joystick ends moving.
+```javascript
+const joy = new Joystick();
+joy.on("end", (joystickObject) => { /* code here */ });
+```
 ## Example
 First of all implement Joystick library
 ```html
@@ -46,4 +62,5 @@ new Joystick(
 )
 ```
 We are set!
-
+## Demo
+Live example is availible at ...
