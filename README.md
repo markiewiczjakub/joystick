@@ -25,7 +25,7 @@ const options = {
 **color** - main color of joystick,  
 **strokeColor** - stroke color of inner joystick element.  
   
-Joystick contains three events to work on.
+Joystick contains three events to work on.  
 **Change** - event dispatched when Joystick element is in move.
 ```javascript
 const joy = new Joystick();
@@ -63,4 +63,4 @@ new Joystick(
 ```
 We are set!
 ## Demo
-Live example is availible at ...
+Live example is availible at [link](https://markiewiczjakub.github.io/joystick/demo/).
